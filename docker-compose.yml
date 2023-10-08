@@ -5,7 +5,7 @@ services:
     image: postgres:12-alpine
     restart: always
     expose:
-      - 5433
+      - 5432
     environment:
       - "POSTGRES_PASSWORD=clojure"
       - "POSTGRES_USER=clojure"
@@ -19,7 +19,7 @@ services:
       - "DB_HOST=db"
       - "WEB_HOST=0.0.0.0"
     ports:
-      - "8081:5432"
+      - "8081:8081"
     command: java -jar app.jar
     depends_on:
       - db
